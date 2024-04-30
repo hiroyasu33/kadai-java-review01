@@ -5,12 +5,13 @@ public class Review01 {
        int price = 1400;
        double tax = 0.1;
        int result;
-       result = taxMethod(price, tax);
-       System.out.println(price + "円の商品の税込価格は" + result + "円" + "(消費税は" + (int)(price * tax) + "円)" + "です。");
+       result = tax(price, tax);
+       System.out.println(price + "円の商品の税込価格は" + (price + result) + "円" + "(消費税は" + result + "円)" + "です。");
     }
 
-    public static int taxMethod(int price, double tax){
-       int result = (int)(price * tax + price);
+    public static int tax(int price, double tax){
+        //消費税額
+        int result = (int)(price * tax );
        return result;
      }
 
